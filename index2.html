@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator for Addition, Subtraction, Multiplication and Division (+/-/x/:)</title>
+    <meta name="author" content="Marion Wenty">
+    <meta name="description" content="The Calculator site provides a tool for the four basic 
+     arithmetical operations: Addition, Subtraction, Multiplikation and Division (+, -, x, :).">    
+    <link rel="shortcut icon" href="calculator_icon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <h1>Calculator</h1>    
+    <img src="calculator_icon.ico">
+             
+<form>
+  <input type="number" id="firstnr" value="0" />
+  <input type="button" id="btnplus" value="+" />
+  <input type="button" id="btnminus" value="-" />
+  <input type="button" id="btntimes" value="*" />
+  <input type="button" id="btndiv" value="/" />
+  <input type="number" id="secondnr" value="0" /> =
+  <output name="result">0</output> 
+</form>
+  <script>
+    var firstnr = document.getElementById('firstnr');
+    var btnplus = document.getElementById('btnplus');
+    var btnminus = document.getElementById('btnminus');
+    var btntimes  = document.getElementById('btntimes');
+    var btndiv  = document.getElementById('btndiv');
+    var secondnr  = document.getElementById('secondnr');
+    var result = document.querySelector('output');
+    btnplus.addEventListener('click', plusBtn);
+    function plusBtn() {
+        result.value=parseFloat(firstnr.value)+parseFloat(secondnr.value)   
+      }
+    btnminus.addEventListener('click', minusBtn);
+      function minusBtn() {
+        result.value=parseFloat(firstnr.value)-parseFloat(secondnr.value)   
+      }
+    btntimes.addEventListener('click', timesBtn);
+    function timesBtn() {
+        result.value=parseFloat(firstnr.value)*parseFloat(secondnr.value)   
+      }
+    btndiv.addEventListener('click', divBtn);
+    function divBtn() {
+        result.value=parseFloat(firstnr.value)/parseFloat(secondnr.value)   
+    }
+  </script>
+
+    </body>
+</html>
