@@ -1,0 +1,76 @@
+body {
+   background-color: #ffffd0;}
+
+h1 {
+  font: bold 4.6em courier;
+  color: blue;
+  text-align: center;
+}
+
+#btnplus {
+  background-color: orange;
+}
+
+#btnminus {
+  background-color: lightskyblue;
+}
+
+#btntimes {
+  background-color: palevioletred;
+}
+
+#btndiv {
+  background-color: lightgreen;
+}
+
+#btnequals {
+  background-color: white; /* style white instead of no colour: makes focus on button visible */
+}
+
+.button {
+  width: 2em;
+}
+
+.button:hover {
+  border: white;
+}
+
+#firstnr, #secondnr {
+  background: linear-gradient(
+                to right,
+               white,
+               lightskyblue
+              ); 
+  padding: 3px 3px 3px 7px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  width: 120px;
+  transform-origin: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+img:hover {
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
