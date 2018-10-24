@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
+  
   <head>
     <meta charset="utf-8">
     <title>Calculator for Addition, Subtraction, Multiplication and Division (+/-/x/:)</title>
-    <meta name="author" content="Marion Wenty">
+    <meta name="author" content="Marion">
     <meta name="description" content="The Calculator site provides a tool for the four basic 
-     arithmetical operations: Addition, Subtraction, Multiplikation and Division (+, -, x, :).">    
+      arithmetical operations: Addition, Subtraction, Multiplication and Division (+, -, x, :).">    
     <link rel="shortcut icon" href="calculator_icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="calculate.js" async></script>
   </head>
+  
   <body>
-    <h1>Calculator</h1>    
     <img src="calculator_icon.ico">
-    
-    <form action="/my-handling-form-page" method="post">
-      <div>
-        <label for="number">Enter your number:</label>
-        <input type="number" id="number" name="number">
-      </div>
-      <div>
-        <button name="plus">+</button>
-      </div>
-      <div>
-        <button name="minus">-</button>
-      </div>
-      <div>
-        <button name="times">.</button>
-      </div>
-      <div>
-        <button name="divided_by">/</button>
-      </div>
-    </form>
-
+    <h1>CALCULATOR</h1>    
+    <form>
+       <!-- insert comments -->
+      <input type="number" id="firstnr" value="" /> <!-- insert comments -->
+      <input type="button" id="btnplus" class="button" value="+" /> <!-- other possibility: <button> element -->
+      <input type="button" id="btnminus" class="button" value="-" />
+      <input type="button" id="btntimes" class="button" value="*" />
+      <input type="button" id="btndiv" class="button" value="/" />
+      <input type="number" id="secondnr" value="" />
+      <input type="button" id="btnequals" class="button" value="=" />
+      <output name="result">0</output> 
+    </form> 
   </body>
 </html>
