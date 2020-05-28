@@ -50,7 +50,7 @@ def fill(i, num, nums):
     else:
         i += 1
         num = 1
-    if nums[7] == 8:
+    if nums[7] != 0:
         return nums
     fill(i, num, nums)
 
