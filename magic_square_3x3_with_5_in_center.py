@@ -3,7 +3,6 @@
 #                [0, 0, 0]]
 
 nums = [0] * 8
-print(nums)
 
 def check_sum(i1, i2, i3):
     nums5 = nums[:]
@@ -29,29 +28,28 @@ def back_and_next_option(num):
         num += 1
     return num
 
-def back(nums, i):
-    nums[i] = 0
-    i -= 1
-    return nums, i
-
 def fill(i, num, nums):
     nums[i] = num
-    print(num)
-    print(nums)
     if len(nums[0:i+1]) != len(set(nums[0:i+1])) or not check_all_sums():
         if num < 9:
             num = back_and_next_option(num)
         else:
             while nums[i] == 9:
-                nums, i = back(nums, i)
+                nums[i] = 0
+                i -= 1
             num = nums[i]
             num = back_and_next_option(num)
         fill(i, num, nums)
     else:
         i += 1
-        num = 1
+        num = 1    
     if nums[7] != 0:
         return nums
-    fill(i, num, nums)
+    else:
+        fill(i, num, nums)
+        return nums
 
-print(fill(0, 1, nums))
+fill(0, 1, nums)
+nums.insert(4, 5)
+magic_square = [nums[:3], nums[3:6], nums[6:]]
+print(magic_square)
