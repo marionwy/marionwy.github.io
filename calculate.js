@@ -1,9 +1,3 @@
-    /*
-      still missing:
-        shorter?
-        comments are missing
-        result: center vertically 
-    */
    
 let firstNr = document.getElementById('firstnr');
 let btnPlus = document.getElementById('btnplus');
