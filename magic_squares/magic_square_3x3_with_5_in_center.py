@@ -1,6 +1,15 @@
-#magic_square = [[0, 0, 0],
-#                [0, 5, 0],
-#                [0, 0, 0]]
+# This code produces the first found magic square using backtracking with the numbers 
+# 1 - 9, if the number 5 is already in the middle at the beginning:
+
+# For an explanation for this approach see:
+
+# https://www.researchgate.net/publication/
+# 317019849_A_not_unlikely_interpretation_of_Goethe%27s_Hexeneinmaleins_
+# -Eine_nicht_unwahrscheinliche_Interpretation_des_Goethe%27schen_Hexeneinmaleins 
+
+# magic_square = [[0, 0, 0],
+#                 [0, 5, 0],
+#                 [0, 0, 0]]
 
 nums = [0] * 8
 
@@ -29,7 +38,11 @@ def back_and_next_option(num):
     return num
 
 def fill(i, num, nums):
+    print(num)
     nums[i] = num
+    print(nums)
+    if nums[7] != 0:
+        return nums    
     if len(nums[0:i+1]) != len(set(nums[0:i+1])) or not check_all_sums():
         if num < 9:
             num = back_and_next_option(num)
@@ -39,15 +52,11 @@ def fill(i, num, nums):
                 i -= 1
             num = nums[i]
             num = back_and_next_option(num)
-        fill(i, num, nums)
+        return fill(i, num, nums)
     else:
         i += 1
-        num = 1    
-    if nums[7] != 0:
-        return nums
-    else:
-        fill(i, num, nums)
-        return nums
+        num = 1
+        return fill(i, num, nums)
 
 fill(0, 1, nums)
 nums.insert(4, 5)
