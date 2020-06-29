@@ -41,7 +41,9 @@ def fill(i, num, nums):
     print(num)
     nums[i] = num
     print(nums)
-    if nums[5] + nums[6] + nums[7] == 15:
+    if (nums[2] + nums[4] + nums[7] == 15 and
+        nums[0] + 5 + nums[7] == 15 and
+        nums[5] + nums[6] + nums[7] == 15):
         return nums    
     if len(nums[0:i+1]) != len(set(nums[0:i+1])) or not check_all_sums():
         if num < 9:
