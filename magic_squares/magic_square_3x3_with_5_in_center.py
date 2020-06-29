@@ -52,11 +52,13 @@ def fill(i, num, nums):
                 i -= 1
             num = nums[i]
             num = back_and_next_option(num)
-        return fill(i, num, nums)
+        fill(i, num, nums)
+        return nums
     else:
         i += 1
         num = 1
-        return fill(i, num, nums)
+        fill(i, num, nums)
+        return nums
 
 fill(0, 1, nums)
 nums.insert(4, 5)
